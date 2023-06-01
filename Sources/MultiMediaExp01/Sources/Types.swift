@@ -15,7 +15,9 @@ import Foundation
 /// convient function to open a image with a name, currently support .png file only.
 public func grayMatrix(of name: String, subdirectory: String = "Resources") ->  Matrix?  {
     if let imageURL = Bundle.module.url(forResource: name, withExtension: "", subdirectory: subdirectory) {
-        return grayMatrix(of: getImageFrom(contentsOf: imageURL))
+        if let image = getImageFrom(contentsOf: imageURL) {
+            return grayMatrix(of: image)
+        }
     }
     return nil
 }

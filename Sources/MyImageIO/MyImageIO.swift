@@ -2,7 +2,6 @@ import Accelerate
 import CoreGraphics
 import MEQT
 
-
 /// local an image inside's swift package manager's target's resource ( passed in using parameter resources: [])
 /// - Parameters: url of the image
 /// - Returns: cgImage
@@ -17,7 +16,6 @@ public func getImageFrom(contentsOf url: URL) -> CGImage? {
     }
     return nil
 }
-
 
 /// create an matirx of double containing gray information of the cgImage, the val ranges from 0.0 to 255.0
 /// - Parameter cgImage: image source of width\* height
@@ -94,8 +92,6 @@ public func grayMatrix(of cgImage: CGImage) -> MEQTMatrix<Double>? {
     // cut row bytes padding
     return mat[0..<height, 0..<width]
 }
-
-
 
 /// image grayscale information visualization
 extension MEQTMatrix<Double>: CustomPlaygroundDisplayConvertible {
